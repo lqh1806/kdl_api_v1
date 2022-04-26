@@ -2,6 +2,9 @@ from django.urls import path, include
 from sale.views import *
 
 urlpatterns = [
+    path('get_sp/', get_sp, name='get_sp'),
+    path('get_nam/', get_nam, name='get_sp'),
+    path('get_quy/<int:nam>/', get_quy, name='get_sp'),
     path('buudien/', buudien, name='buudien'),
     path('dulich/', dulich, name='dulich'),
     path('dulich/<int:sanpham_id>/', dulich_filter1, name='dulich_filter1'),

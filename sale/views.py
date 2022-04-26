@@ -350,6 +350,32 @@ group by x.vanphongdaidien_dimension, x.long_description""", [city_name, quarter
         res = dictfetchall(cursor)
 
     return JsonResponse(res, safe=False) 
+    
+def get_sp(request):
+    with connection.cursor() as cursor:
+        cursor.execute("""select dim_key, mieuta
+from mathang_dimension_view""")
+        res = dictfetchall(cursor)
+
+    return JsonResponse(res, safe=False)     
+
+def get_nam(request):
+    with connection.cursor() as cursor:
+        cursor.execute("""select dim_key, long_description
+from thoigian_dimension_view
+where level_name = 'NAM'""")
+        res = dictfetchall(cursor)
+
+    return JsonResponse(res, safe=False)   
+
+def get_quy(request, nam):
+    with connection.cursor() as cursor:
+        cursor.execute("""select dim_key, long_description
+from thoigian_dimension_view
+where year = %s""", [nam])
+        res = dictfetchall(cursor)
+    
+    return JsonResponse(res, safe=False)   
 
 def dictfetchall(cursor):
     "Return all rows from a cursor as a dict"
