@@ -1,0 +1,91 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'hung.css' %}" />
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+/>
+<link rel="stylesheet" href="{% static 'store.css' %}" />
+<link rel="stylesheet" href="{% static  'themify-icons/themify-icons.css' %}" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static  'js/xuly_store.js'%} "></script>
+
+<html lang="en">
+  <head> </head>
+
+  <body>
+    <div class="main">
+      <div class="container-left">
+        <div class="left-main">
+          <h2 style="font-size: 20px">MENU</h2>
+          <a href="hung.html">Sale-Fact</a>
+          <br />
+          <a href="Store.html">Store-Fact</a>
+        </div>
+      </div>
+      <div class="container-right">
+        <div class="right-top">
+          <i class="ti-menu ml-3"></i>
+          <hr width="100%" align="center" />
+          <p></p>
+        </div>
+        <div class="right-button">
+          <div class="table-1">
+            <h2>Sale-Fact</h2>
+            <hr width="100%" align="center" />
+            <span class="ml-5">Sản phẩm</span>
+            <select class="ml-3" name="" id="sp-combo-box">
+              <option value="0">Tất cả sản phẩm</option>
+            </select>
+            <span class="ml-1">Năm</span>
+            <select class="ml-3" name="" id="nam-combo-box">
+              <option value="0">Tất cả năm</option>
+            </select>
+            <span class="ml-1">Quý</span>
+            <select class="ml-3" name="" id="quy-combo-box" disabled="disabled">
+              <option value="0">Tất cả quý</option>
+            </select>
+            <table class="table table-bordered mt-5 ml-5">
+              <thead>
+                <tr>
+                  <th colspan="2"></th>
+                  <th colspan="2">Bưu điện</th>
+                  <th colspan="2">Du lịch</th>
+                  <th colspan="2">Total</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td colspan="2"></td>
+                  <td>Số lượng</td>
+                  <td class="pr-5">Tổng tiền</td>
+                  <td>Số lượng</td>
+                  <td class="pr-5">Tổng tiền</td>
+                  <td>Số lượng</td>
+                  <td class="pr-5">Tổng tiền</td>
+                </tr>
+
+                <tr>
+                  <td colspan="2">Bang&emsp;<i class="ti-control-play"></i></td>
+                  <td></td>
+                  <td class="pr-5"></td>
+                  <td></td>
+                  <td class="pr-5"></td>
+                  <td></td>
+                  <td class="pr-5"></td>
+                </tr>
+
+                <tr>
+                  <td colspan="2" style="height: 100px"></td>
+                  <td colspan="2"></td>
+                  <td colspan="2"></td>
+                  <td colspan="2"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
