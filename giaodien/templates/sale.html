@@ -1,17 +1,18 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'hung.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'sale.css' %}" />
 <link
   rel="stylesheet"
   href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 />
 <link rel="stylesheet" href="{% static 'store.css' %}" />
 <link rel="stylesheet" href="{% static  'themify-icons/themify-icons.css' %}" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{% static  'js/jquery-3.6.0.js'%} "></script>
 <script src="{% static  'js/xuly_store.js'%} "></script>
 
-<html lang="en">
-  <head> </head>
 
+<html lang="en">
+  <head> 
+  </head>
   <body>
     <div class="main">
       <div class="container-left">
@@ -20,6 +21,7 @@
           <a href="hung.html">Sale-Fact</a>
           <br />
           <a href="Store.html">Store-Fact</a>
+          <button type="button" class="btn btn-primary" id="button-reload">Reload</button>
         </div>
       </div>
       <div class="container-right">
@@ -44,6 +46,7 @@
             <select class="ml-3" name="" id="quy-combo-box" disabled="disabled">
               <option value="0">Tất cả quý</option>
             </select>
+            
             <table class="table table-bordered mt-5 ml-5">
               <thead>
                 <tr>
@@ -65,22 +68,8 @@
                   <td class="pr-5">Tổng tiền</td>
                 </tr>
 
-                <tr>
-                  <td colspan="2">Bang&emsp;<i class="ti-control-play"></i></td>
-                  <td></td>
-                  <td class="pr-5"></td>
-                  <td></td>
-                  <td class="pr-5"></td>
-                  <td></td>
-                  <td class="pr-5"></td>
-                </tr>
-
-                <tr>
-                  <td colspan="2" style="height: 100px"></td>
-                  <td colspan="2"></td>
-                  <td colspan="2"></td>
-                  <td colspan="2"></td>
-                </tr>
+                {%block content%}
+                {%endblock%}
               </tbody>
             </table>
           </div>

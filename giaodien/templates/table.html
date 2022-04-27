@@ -1,0 +1,39 @@
+{% extends 'sale.html' %}
+
+{% block content %}
+<!-- {%for item_buudien in list_buudien%}
+                <tr>
+                  <td colspan="2">{{item_buudien.VANPHONGDAIDIEN_DIMENSION}}&emsp;<i class="ti-control-play"></i></td>
+                  <td>{{item_buudien.SOLUONG}}</td>
+                  <td class="pr-5">{{item_buudien.TONGTIEN}}</td>
+                  {% for item_dulich in list_dulich %}
+                    {% if item_dulich.VANPHONGDAIDIEN_DIMENSION == item_buudien.VANPHONGDAIDIEN_DIMENSION %}
+                    <td>{{item_dulich.SOLUONG}}</td>
+                    <td class="pr-5">{{item_dulich.TONGTIEN}}</td>
+                    {% endif %}
+                  {%endfor%}
+                  {% for item in list_all %}
+                    {% if item.VANPHONGDAIDIEN_DIMENSION == item_buudien.VANPHONGDAIDIEN_DIMENSION %}
+                    <td>{{item.SOLUONG}}</td>
+                    <td class="pr-5">{{item.TONGTIEN}}</td>
+                    {% endif %}
+                  {%endfor%}
+                </tr>
+                {%endfor%}
+
+                {%for item_dulich in list2_dulich%}
+                <tr>
+                  <td colspan="2">{{item_dulich.VANPHONGDAIDIEN_DIMENSION}}&emsp;<i class="ti-control-play"></i></td>
+                  <td>0</td>
+                  <td class="pr-5">0</td>%}
+                  <td>{{item_dulich.SOLUONG}}</td>
+                  <td class="pr-5">{{item_dulich.TONGTIEN}}</td>
+                  {% for item in list2_all %}
+                    {% if item.VANPHONGDAIDIEN_DIMENSION == item_dulich.VANPHONGDAIDIEN_DIMENSION %}
+                    <td>{{item.SOLUONG}}</td>
+                    <td class="pr-5">{{item.TONGTIEN}}</td>
+                    {% endif %}
+                  {%endfor%}
+                </tr>
+                {%endfor%} -->
+{% endblock %}
