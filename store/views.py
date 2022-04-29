@@ -11,7 +11,8 @@ def get_thanh_pho(request):
         cursor.execute("""select ltcv.cuahang_dimension ,sum(ltcv.soluong) as soluong
 from luutru_cube_view ltcv
 where ltcv.cuahang_dimension in(select dim_key from cuahang_dimension_view chv where chv.level_name = 'TONG_CUAHANG')
-group by ltcv.cuahang_dimension""")
+group by ltcv.cuahang_dimension
+order by ltcv.cuahang_dimension""")
         res = dictfetchall(cursor)
 
     return JsonResponse(res, safe=False)
@@ -31,7 +32,8 @@ def thanhpho_id(request, sanpham_id):
         cursor.execute("""select ltcv.cuahang_dimension, ltcv.soluong 
 from luutru_cube_view ltcv
 where ltcv.cuahang_dimension in(select dim_key from cuahang_dimension_view chv where chv.level_name = 'TONG_CUAHANG')
-and ltcv.mathang_dimension = %s """ , [sanpham_id]) 
+and ltcv.mathang_dimension = %s
+order by ltcv.cuahang_dimension """ , [sanpham_id]) 
         res = dictfetchall(cursor)
     return JsonResponse(res, safe=False)
 

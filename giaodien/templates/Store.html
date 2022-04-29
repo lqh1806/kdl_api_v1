@@ -1,11 +1,12 @@
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'hung.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'store.css' %}" />
 <link
   rel="stylesheet"
   href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 />
-<link rel="stylesheet" href="{% static 'store.css' %}" />
 <link rel="stylesheet" href="{% static  'themify-icons/themify-icons.css' %}" />
+<script src="{% static  'js/jquery-3.6.0.js'%} "></script>
+<script src="{% static  'js/xuly_store.js'%} "></script>
 
 <html lang="en">
   <head> </head>
@@ -15,31 +16,25 @@
       <div class="container-left">
         <div class="left-main">
           <h2 style="font-size: 20px">MENU</h2>
-          <a href="hung.html">Sale-Fact</a>
+          <a href="{% url 'sale' %}">Sale-Fact</a>
           <br />
-          <a href="Store.html">Store-Fact</a>
+          <a href="{% url 'sale' %}">Store-Fact</a>
+          <button type="button" class="btn btn-primary" id="button-reload">Reload</button>
         </div>
       </div>
       <div class="container-right">
-        <div class="right-top">
-          <i class="ti-menu ml-3"></i>
-          <hr width="100%" align="center" />
-          <p></p>
-        </div>
         <div class="right-button">
           <div class="table-1">
             <h2>Store-Fact</h2>
             <hr width="100%" align="center" />
-            <span class="ml-5">Sản phẩm</span
-            ><select class="ml-3" name="" id="">
-              <option value="">Việt Nam</option>
-              <option value="">Hàn Quốc</option>
-              <option value="">Nhật Bản</option>
+            <span class="ml-5">Sản phẩm</span>
+            <select class="ml-3" name="" id="sp-combo-box">
+              <option value="0">Tất cả sản phẩm</option>
             </select>
-            <table class="table table-bordered mt-5 ml-5">
+            <table class="table table-bordered mt-5 ml-5" id="table-store">
               <thead>
                 <tr>
-                  <th></th>
+                  <th>Thành phố/Cửa hàng</th>
                   <th>Tổng</th>
                 </tr>
               </thead>

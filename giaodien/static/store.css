@@ -36,15 +36,6 @@
     height: 10%;
 }
 
-.right-button {
-    width: 100%;
-    height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: aliceblue;
-}
-
 .table-1 {
     width: 95%;
     height: 95%;

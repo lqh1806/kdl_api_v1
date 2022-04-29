@@ -24,24 +24,20 @@
 }
 
 .container-right {
-    width: 85%;
+    width: 100%;
     height: 100%;
     background-color: white;
 }
 
-.right-top {
-    width: 100%;
-    height: 10%;
-}
 
-.right-button {
+/* .right-button {
     width: 100%;
     height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: aliceblue;
-}
+} */
 
 .table-1 {
     width: 95%;
@@ -52,6 +48,7 @@
 .table {
     width: 95%;
 }
+
 
 h2 {
     text-align: center;
