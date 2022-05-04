@@ -31,10 +31,13 @@ $(document).ready(function () {
 
 
     $("#table-store").on('click', 'tbody tr', function(){
-      $(this).toggleClass("show")
+      $(this).toggleClass("show");
+      classArr = $(this).attr('class');
+      const words = classArr.split(' ');
+      var tpName = words[0];
       if($(this).hasClass('show')){
         id_sp = $('#sp-combo-box').val();
-        var id_tr = encodeURIComponent($(this).attr('id'))
+        var id_tr = encodeURIComponent($(this).attr('id'));
         if(id_sp == 0){
             getDetailData('http://127.0.0.1:8000/store/thanhpho/' + id_tr + '/', $(this).attr('class'));
           }
@@ -43,7 +46,7 @@ $(document).ready(function () {
           }
       }
       else{
-        $("#table-store tbody ").find("tr.children").remove();
+        $("#table-store tbody ").find("tr.children" + tpName).remove();
       }
     });
 });
@@ -75,7 +78,7 @@ function getDetailData(url, class_name){
       }).done(function (data) {
          for(let i = 0; i < data.length; i++){
               row.after(
-                "<tr class = 'children'>" +
+                "<tr class = 'children" + words[0] +   "'>" +
                 "<td style='color:blue;'>" + data[i].CUAHANG_DIMENSION + "&emsp;</td>" +
                 "<td>" + data[i].SOLUONG + "</td>" +
                 "</tr>"

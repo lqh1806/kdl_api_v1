@@ -103,8 +103,10 @@ $(document).ready(function () {
 
   $("#table-sale").on('click', 'tbody tr', function(){
     $(this).toggleClass("show")
+    classArr = $(this).attr('class');
+    const words = classArr.split(' ');
+    var tpName = words[0];
     if($(this).hasClass('show')){
-
       id_sp = $('#sp-combo-box').val();
       id_nam = $('#nam-combo-box').val();
       id_quy = 0;
@@ -130,7 +132,7 @@ $(document).ready(function () {
       }
     }
     else{
-      $("#table-sale tbody ").find("tr.children").remove();
+      $("#table-sale tbody ").find("tr.children" + tpName).remove();
     }
   });
 });
@@ -238,7 +240,7 @@ function getDetailData(url, class_name){
       if(i == data.length - 1){
         if(data[i].KHACHHANG_DIMENSION == 'BuuDien'){
           row.after(
-            "<tr class = 'children'>" +
+            "<tr class = 'children" + words[0] +   "'>" +
             "<td colspan='2' style='color:blue;'>" + data[i].LONG_DESCRIPTION + "&emsp;</td>" +
             "<td>" + data[i].SOLUONG + "</td>" +
             "<td class = 'pr-5'>" + data[i].TONGTIEN + "</td>" +
@@ -251,7 +253,7 @@ function getDetailData(url, class_name){
         }
         else{
           row.after(
-          "<tr class = 'children'>" +
+            "<tr class = 'children" + words[0] +   "'>" +
            "<td colspan='2' style='color:blue;'>" + data[i].LONG_DESCRIPTION + "&emsp;</td>" +
            "<td>0</td>" +
            "<td class = 'pr-5'>0</td>" +
@@ -268,7 +270,7 @@ function getDetailData(url, class_name){
           var tongSL = data[i].SOLUONG + data[i+1].SOLUONG;
           var tongTien = data[i].TONGTIEN + data[i+1].TONGTIEN;
             row.after(
-            "<tr class = 'children'>" +
+              "<tr class = 'children" + words[0] +   "'>" +
              "<td colspan='2' style='color:blue;'>" + data[i].LONG_DESCRIPTION + "&emsp;</td>" +
              "<td>" + data[i].SOLUONG + "</td>" +
              "<td class = 'pr-5'>" + data[i].TONGTIEN + "</td>" +
@@ -282,7 +284,7 @@ function getDetailData(url, class_name){
         }
         else if(data[i].KHACHHANG_DIMENSION == 'BuuDien'){
           row.after(
-            "<tr class = 'children'>" +
+            "<tr class = 'children" + words[0] +   "'>" +
             "<td colspan='2' style='color:blue;'>" + data[i].LONG_DESCRIPTION + "&emsp;</td>" +
             "<td>" + data[i].SOLUONG + "</td>" +
             "<td class = 'pr-5'>" + data[i].TONGTIEN + "</td>" +
@@ -295,7 +297,7 @@ function getDetailData(url, class_name){
         }
         else{
           row.after(
-          "<tr class = 'children'>" +
+            "<tr class = 'children" + words[0] +   "'>" +
            "<td colspan='2' style='color:blue;'>" + data[i].LONG_DESCRIPTION + "&emsp;</td>" +
            "<td>0</td>" +
            "<td class = 'pr-5'>0</td>" +
